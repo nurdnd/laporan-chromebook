@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laporan Kendala Chromebook</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Container Teks Berjalan -->
+  <div class="running-text-container">
+    <span id="runningText">Memuat informasi laporan...</span>
+  </div>
+
+  <!-- Layout Utama Split Dua Kolom -->
+  <div class="main-layout">
+    
+    <!-- KOLOM KIRI: FORMULIR LAPORAN -->
+    <div class="column left-column">
+      <h2>📋 Formulir Laporan</h2>
+      
+      <form id="issueForm">
+        <!-- Pilihan Kelas -->
+        <div class="form-group">
+          <label for="kelas">Pilih Kelas:</label>
+          <select id="kelas" required>
+            <option value="">-- Pilih Kelas --</option>
+            <option value="10-A">10-A</option>
+            <option value="10-B">10-B</option>
+            <option value="10-C">10-C</option>
+            <option value="10-D">10-D</option>
+            <option value="10-E">10-E</option>
+            <option value="11-A">11-A</option>
+            <option value="11-B">11-B</option>
+            <option value="11-C">11-C</option>
+            <option value="11-D">11-D</option>
+            <option value="12-A">12-A</option>
+            <option value="12-B">12-B</option>
+            <option value="12-C">12-C</option>
+            <option value="12-D">12-D</option>
+          </select>
+        </div>
+
+        <!-- Pilihan Nama Siswa -->
+        <div class="form-group">
+          <label for="nama">Nama Siswa:</label>
+          <select id="nama" required disabled>
+            <option value="">-- Pilih Kelas Terlebih Dahulu --</option>
+          </select>
+        </div>
+
+        <!-- Pilihan Kategori Kendala -->
+        <div class="form-group">
+          <label for="kategori">Kategori Kendala:</label>
+            <select id="kategori" required>
+              <option value="">-- Pilih Kategori Kendala --</option>
+              <option value="Layar / Tampilan">Layar / Tampilan</option>
+              <option value="Keyboard / Touchpad">Keyboard / Touchpad</option>
+              <option value="Baterai / Pengisian Daya">Baterai / Pengisian Daya</option>
+              <option value="Performa / Lemot">Performa / Lemot</option>
+              <option value="Koneksi Internet / Wi-Fi">Koneksi Internet / Wi-Fi</option>
+              <option value="Akun Terlogout / Minta Login">Akun Terlogout / Minta Login</option>
+              <option value="Aplikasi Ebook Hilang / Terhapus / Error">Aplikasi Ebook Hilang / Terhapus / Error</option>
+              <option value="Minta Buka Website (Unblock)">Minta Buka Website (Unblock)</option>
+              <option value="Audio / Kamera / Mikrofon">Audio / Kamera / Mikrofon</option>
+              <option value="Lupa Password / Akun">Lupa Password / Akun</option>
+              <option value="Kerusakan Fisik">Kerusakan Fisik</option>
+              <option value="Lainnya">Lainnya</option>
+            </select>
+        </div>
+
+        <!-- Deskripsi Kendala -->
+        <div class="form-group">
+          <label for="deskripsi">Kendala atau Masalah:</label>
+          <textarea id="deskripsi" rows="4" placeholder="Jelaskan detail kendala yang dialami..." required></textarea>
+        </div>
+
+        <button type="submit">Kirim Laporan</button>
+      </form>
+    </div>
+
+    <!-- KOLOM KANAN: DAFTAR LAPORAN (MAKSIMAL 10 TERAKHIR) -->
+    <div class="column right-column">
+      <h2>📌 10 Laporan Terakhir Hari Ini</h2>
+      <ul id="issueList" class="issue-list"></ul>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
